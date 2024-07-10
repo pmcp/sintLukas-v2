@@ -1,6 +1,8 @@
 <script setup>
+const route = useRoute()
 const lang = ref('nl')
-const { data } = await useAsyncData('page', () => queryContent(`${$route.path}.${lang}`).findOne())
+console.log(`${route.path}.${lang}`)
+const { data } = await useAsyncData('page', () => queryContent(`${route.path}.${lang}`).findOne())
 console.log(data.value)
 </script>
 
