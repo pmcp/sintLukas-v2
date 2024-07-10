@@ -1,21 +1,21 @@
 <template>
-  <frame-grid
-      v-if="layout === 1"
-      v-bind:gap="gap"
-      v-bind:defaultDirection="defaultDirection"
-      v-bind:frame="frame"
-      v-bind:rectSize="rectSize"
-      v-bind:useFrameFill="useFrameFill"
-  >
-    <nuxt-img v-for="i in images" class="object-cover" :src="i.image" />
-  </frame-grid>
+<!--  <frame-grid-->
+<!--      v-if="layout === 1"-->
+<!--      v-bind:gap="gap"-->
+<!--      v-bind:defaultDirection="defaultDirection"-->
+<!--      v-bind:frame="frame"-->
+<!--      v-bind:rectSize="rectSize"-->
+<!--      v-bind:useFrameFill="useFrameFill"-->
+<!--  >-->
+<!--    <nuxt-img v-for="i in images" class="object-cover" :src="i.image" />-->
+<!--  </frame-grid>-->
   <div v-if="layout === 4">
     <nuxt-img v-for="i in images" class="w-full" :src="i.image" />
   </div>
 
 </template>
 <script>
-import { FrameGrid } from '@egjs/vue-grid';
+// import { FrameGrid } from '@egjs/vue-grid';
 export default {
   props: {
     images: {
@@ -34,7 +34,7 @@ export default {
     useFrameFill: true,
   }),
   components: {
-    FrameGrid,
+    // FrameGrid,
   }
 }
 </script>
