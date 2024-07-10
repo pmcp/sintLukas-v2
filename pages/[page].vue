@@ -1,15 +1,8 @@
 <template>
-  <main>
-    HALLO
-
-  {{ $route.path}} - {{ '/pages'+$route.path }}
-
-    <pre>{{ data }}</pre>
-
-  </main>
+  <ContentQuery :path="`${$route.path}.${lang}`" find="one" v-slot="{ data }">
+    <ContentRenderer :value="data" class="prose" />
+  </ContentQuery>
 </template>
-<script setup>
-const route = useRoute()
-const { data } = await useAsyncData('page', () => queryContent(route.path).findOne())
-console.log(data)
+<script setup lang="ts">
+const lang = ref('nl')
 </script>
