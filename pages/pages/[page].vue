@@ -1,15 +1,12 @@
-<template>
-  <main>
-    HALLO
-
-  {{ $route.path}} - {{ '/pages'+$route.path }}
-
-    <pre>{{ data }}</pre>
-
-  </main>
-</template>
 <script setup>
-const route = useRoute()
-const { data } = await useAsyncData('page', () => queryContent(route.path).findOne())
-console.log(data)
+const lang = ref('nl')
+const { data } = await useAsyncData('page', () => queryContent(`${$route.path}.${lang}`).findOne())
+console.log(data.value)
 </script>
+
+<template>
+  Here is the page - {{ `${$route.path}.${lang}` }}
+  <pre>
+    {{ data }}
+  </pre>
+</template>
