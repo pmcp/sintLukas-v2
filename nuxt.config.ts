@@ -2,6 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/content', "@nuxt/image"],
-
+  modules: ['@nuxt/content', "@nuxt/image", '@nuxt/ui'],
+  ui: {
+    safelistColors: ['black', 'primary', 'secondary']
+  },
+  image: {
+    provider: 'netlify'
+  }
 })
