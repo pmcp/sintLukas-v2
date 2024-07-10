@@ -10,5 +10,5 @@
 </template>
 <script setup>
 const route = useRoute()
-const { data } = await useAsyncData('home', () => queryContent(route.path).findOne())
+const { data } = await useAsyncData('page', () => queryContent(route.path).findOne())
 </script>
