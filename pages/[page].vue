@@ -1,9 +1,12 @@
 <template>
-  <ContentQuery :path="`${$route.path}.${lang}`" find="one" v-slot="{ data }">
-    {{ data }}
-    <ContentRenderer :value="data" class="prose" />
+  <ContentQuery :path="`pages${$route.path}`" find="one" v-slot="{ data }">
+    <template #default="{ data }">
+      <pre>{{ data }}</pre>
+    </template>
+    <template #not-found>
+      <p>No page found.</p>
+    </template>
   </ContentQuery>
 </template>
 <script setup lang="ts">
-const lang = ref('nl')
 </script>
