@@ -1,5 +1,5 @@
 <template>
-  <ContentQuery :path="`pages${$route.path}`" find="one" v-slot="{ data }">
+  <ContentQuery :path="`pages${route.path}`" find="one" v-slot="{ data }">
     <template #default="{ data }">
       <pre>{{ data }}</pre>
     </template>
