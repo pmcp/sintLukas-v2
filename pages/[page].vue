@@ -1,4 +1,5 @@
 <template>
+  {{ $route.path }}
   <ContentDoc>
     <template v-slot="{ doc }">
       {{ doc }}

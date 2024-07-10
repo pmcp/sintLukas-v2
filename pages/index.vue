@@ -1,7 +1,7 @@
 <template>
-  <nuxt-link :to="`/pages/testpage-1.${lang}`">test</nuxt-link>
-  -
-  <nuxt-link :to="`/testpage-1.${lang}`">test</nuxt-link>
+  <nuxtLink :to="`/pages/testpage-1.${lang}`">test</nuxtLink>
+  --
+  <nuxtLink :to="`/testpage-1.${lang}`">test</nuxtLink>
 
 </template>
 
