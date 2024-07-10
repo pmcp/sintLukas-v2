@@ -1,12 +1,9 @@
 <template>
-  <ContentDoc>
-    <template v-slot="{ doc }">
-      {{ doc }}
-    </template>
-    <template #not-found>
-      <h1>Document not found</h1>
-    </template>
-  </ContentDoc>
+  here we go again - {{ data}}
+  ==== {{ error }}
 </template>
 <script setup lang="ts">
+const route = useRoute()
+const { data, error,  } = await useAsyncData('home', () => queryContent(route.path).findOne())
+
 </script>
