@@ -2,7 +2,7 @@
   <main>
     HALLO
 
-{{ $route.path}} - {{ '/pages'+$route.path }}
+  {{ $route.path}} - {{ '/pages'+$route.path }}
 
     <pre>{{ data }}</pre>
 
@@ -11,4 +11,5 @@
 <script setup>
 const route = useRoute()
 const { data } = await useAsyncData('page', () => queryContent(route.path).findOne())
+console.log(data)
 </script>
